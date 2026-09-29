@@ -1,0 +1,3 @@
+<div id="footer" class="app-footer">
+    &copy; 2025 Aryan Infotech Pvt. Ltd. All Right Reserved...
+</div>

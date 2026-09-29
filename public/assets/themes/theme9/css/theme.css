@@ -1,0 +1,46 @@
+/* Theme 9 — "Cyberpunk": black bg, neon pink/cyan, glitch + scanlines */
+:root{ --t9-bg:#050308; --t9-surface:#0e0a16; --t9-pink:#ff2fd0; --t9-cyan:#2ff2ff; --t9-border:#2a1f38; }
+body.theme9-body{ background:var(--t9-bg); color:#e9e6f5; font-family:'Rajdhani',sans-serif; position:relative; overflow-x:hidden; }
+.theme9-body .orbitron{ font-family:'Orbitron',sans-serif; }
+.theme9-body a{ color:#e9e6f5; }
+.theme9-body .eyebrow{ font-family:'Orbitron',sans-serif; color:var(--t9-pink); font-size:.72rem; letter-spacing:.08em; }
+.theme9-body .neon-text{ color:var(--t9-pink); text-shadow:0 0 8px var(--t9-pink), 0 0 20px rgba(255,47,208,.5); }
+.theme9-body .neon-text-cyan{ color:var(--t9-cyan); text-shadow:0 0 8px var(--t9-cyan), 0 0 20px rgba(47,242,255,.5); }
+.theme9-body .navbar{ background:rgba(5,3,8,.8); backdrop-filter:blur(10px); border-bottom:1px solid var(--t9-pink); box-shadow:0 2px 20px rgba(255,47,208,.15); }
+.theme9-body .nav-link{ color:#e9e6f5; font-family:'Orbitron',sans-serif; font-size:.75rem; letter-spacing:.05em; }
+.theme9-body .nav-link:hover{ color:var(--t9-cyan); }
+.theme9-body .btn-primary{ background:transparent; border:2px solid var(--t9-pink); color:var(--t9-pink); font-family:'Orbitron',sans-serif; font-weight:700; box-shadow:0 0 15px rgba(255,47,208,.5); }
+.theme9-body .btn-primary:hover{ background:var(--t9-pink); color:#050308; }
+.theme9-body .btn-outline-neon{ border:2px solid var(--t9-cyan); color:var(--t9-cyan); font-family:'Orbitron',sans-serif; font-weight:700; }
+.theme9-body .btn-outline-neon:hover{ background:var(--t9-cyan); color:#050308; }
+.theme9-body .card{ background:var(--t9-surface); border:1px solid var(--t9-border) !important; border-radius:6px; transition:border-color .3s, transform .3s; }
+.theme9-body .card:hover{ transform:translateY(-6px); border-color:var(--t9-cyan) !important; box-shadow:0 0 30px rgba(47,242,255,.25); }
+.theme9-body .hero-photo{ border:1px solid var(--t9-pink); border-radius:6px; box-shadow:0 0 50px rgba(255,47,208,.35); filter:contrast(1.05) saturate(1.1); }
+.theme9-body .badge-accent{ background:rgba(47,242,255,.15); color:var(--t9-cyan); border:1px solid var(--t9-cyan); padding:.3em .7em; font-size:.7rem; font-family:'Orbitron',sans-serif; }
+.theme9-body .social-btn{ color:#e9e6f5; width:38px; height:38px; border:1px solid var(--t9-border); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; }
+.theme9-body .social-btn:hover{ border-color:var(--t9-pink); color:var(--t9-pink); }
+.theme9-body .site-footer{ background:var(--t9-surface); border-top:1px solid var(--t9-border); }
+.theme9-body .cta-section{ background:radial-gradient(circle at 50% 50%, rgba(255,47,208,.08), transparent 60%); }
+.theme9-body .back-to-top{ position:fixed; right:20px; bottom:20px; width:44px; height:44px; border-radius:50%; border:2px solid var(--t9-cyan); color:var(--t9-cyan); background:#050308; display:flex; align-items:center; justify-content:center; box-shadow:0 0 15px rgba(47,242,255,.5); z-index:999; }
+.theme9-body .splide__pagination__page.is-active{ background:var(--t9-pink); }
+.theme9-body .reveal{ opacity:0; transform:translateY(24px); transition:opacity .6s, transform .6s; }
+.theme9-body .reveal.in{ opacity:1; transform:translateY(0); }
+
+.theme9-body .scanlines{
+    position:fixed; inset:0; z-index:1; pointer-events:none;
+    background:repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0px, transparent 1px, transparent 3px);
+    mix-blend-mode:overlay;
+}
+.theme9-body .neon-cursor{
+    position:fixed; top:0; left:0; width:18px; height:18px; border-radius:50%;
+    border:2px solid var(--t9-cyan); box-shadow:0 0 12px var(--t9-cyan); pointer-events:none; z-index:2000;
+    transform:translate(-50%,-50%); transition:opacity .3s; opacity:0; display:none;
+}
+@media (pointer:fine){ .theme9-body .neon-cursor{ display:block; } }
+
+.theme9-body .glitch{ position:relative; }
+.theme9-body .glitch.glitching::before, .theme9-body .glitch.glitching::after{
+    content:attr(data-text); position:absolute; left:0; top:0; width:100%; height:100%; background:var(--t9-bg);
+}
+.theme9-body .glitch.glitching::before{ color:var(--t9-pink); clip-path:inset(0 0 60% 0); transform:translate(-3px,-2px); }
+.theme9-body .glitch.glitching::after{ color:var(--t9-cyan); clip-path:inset(60% 0 0 0); transform:translate(3px,2px); }

@@ -1,0 +1,24 @@
+/* Theme 6 — "Minimal Mono": black & white, huge type, generous whitespace */
+:root{ --t6-ink:#0a0a0a; --t6-bg:#ffffff; --t6-muted:#6b6b6b; --t6-border:#e5e5e5; }
+body.theme6-body{ background:var(--t6-bg); color:var(--t6-ink); font-family:'Archivo',sans-serif; }
+.theme6-body a{ color:var(--t6-ink); }
+.theme6-body .eyebrow{ text-transform:uppercase; letter-spacing:.15em; font-size:.75rem; font-weight:700; color:var(--t6-muted); }
+.theme6-body .mega-title{ font-size:clamp(2.8rem,8vw,6rem); font-weight:900; line-height:0.98; letter-spacing:-0.03em; margin:0; }
+.theme6-body .section-title{ font-size:2rem; font-weight:900; letter-spacing:-0.02em; }
+.theme6-body .navbar{ border-bottom:1px solid var(--t6-border); background:var(--t6-bg); }
+.theme6-body .nav-link{ font-weight:500; color:var(--t6-ink); }
+.theme6-body .nav-link:hover{ text-decoration:underline; }
+.theme6-body .link-underline{ color:var(--t6-ink); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; }
+.theme6-body .link-underline:hover{ color:var(--t6-muted); }
+.theme6-body .card{ border:none !important; border-top:1px solid var(--t6-border) !important; border-radius:0 !important; box-shadow:none !important; padding-top:1.5rem; transition:opacity .2s; }
+.theme6-body .card:hover{ opacity:.7; }
+.theme6-body .border-top{ border-top:1px solid var(--t6-border); }
+.theme6-body .hero-photo{ border-radius:0; max-height:480px; width:100%; object-fit:cover; }
+.theme6-body .site-footer{ border-top:1px solid var(--t6-border); }
+.theme6-body .site-footer a{ text-decoration:none; }
+.theme6-body .site-footer a:hover{ text-decoration:underline; }
+.theme6-body .back-to-top{ position:fixed; right:20px; bottom:20px; width:42px; height:42px; border-radius:50%; background:var(--t6-ink); color:#fff; display:flex; align-items:center; justify-content:center; z-index:999; }
+.theme6-body .splide__pagination__page.is-active{ background:var(--t6-ink); }
+.theme6-body .scroll-progress{ position:fixed; top:0; left:0; height:3px; background:var(--t6-ink); width:0%; z-index:2000; }
+.theme6-body .reveal{ opacity:0; transform:translateY(20px); transition:opacity .5s, transform .5s; }
+.theme6-body .reveal.in{ opacity:1; transform:translateY(0); }
