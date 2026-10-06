@@ -23,10 +23,10 @@ class HomeController extends Controller
 
     public function __construct()
     {
-        $selectedTheme = Theme::select('name')->inRandomOrder()->first();
+        // $selectedTheme = Theme::select('name')->inRandomOrder()->first();
+        $selectedTheme = Theme::select('name')->where('is_active',1)->first();
+       
         $this->theme=$selectedTheme->name ??'theme1';
-
-        // $this->theme='theme4';
     }
 
     public function index(Request $request)
