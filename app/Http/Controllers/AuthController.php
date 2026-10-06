@@ -152,17 +152,19 @@ class AuthController extends Controller
             if ($request->action === 'verify_otp') {
 
                 // Master OTP Concept
-                if ($request->otp === '123456') {
-                    Auth::login($user);
-                    $request->session()->regenerate();
+                if (!app()->environment('production')) {
+                    if ($request->otp === '123456') {
+                        Auth::login($user);
+                        $request->session()->regenerate();
 
-                    return response()->json([
-                        'status' => 'success',
-                        'message' => 'OTP verified  and logged in successfully.',
-                        'data' => [
-                            'redirect_to' => route('admin.dashboard'),
-                        ],
-                    ], 200);
+                        return response()->json([
+                            'status' => 'success',
+                            'message' => 'OTP verified  and logged in successfully.',
+                            'data' => [
+                                'redirect_to' => route('admin.dashboard'),
+                            ],
+                        ], 200);
+                    }
                 }
 
                 $otpRecord = Otp::where('type', $request->type)->where('identifier', $request->identifier)->latest()->first();
